@@ -15,7 +15,6 @@
   <table class="table" border="3">
     <thead>
     <tr>
-      <th>Id</th>
       <th>Nombre del paciente</th>
       <th>Procedimiento</th>
       <th>Nombre del especialista</th>
@@ -29,7 +28,6 @@
     </thead>
     <tbody>
     <tr th:each="cita:${citas}">
-      <td th:text="${cita.id}"></td>
       <td th:text="${cita.nombrePaciente}"></td>
       <td th:text="${cita.procedimiento}"></td>
       <td th:text="${cita.nombreEspecialista}"></td>
