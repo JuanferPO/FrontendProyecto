@@ -10,12 +10,13 @@
   <h1 align="center">
     Listado de especialistas
   </h1>
-  <br> &nbsp;
+  <br>
   <p align="center">
   <a th:href="@{/especialistas/generar}" class="btn btn-primary">Agregar especialista</a>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
   <a th:href="@{/incio}" class="btn btn-secondary">Ir al inicio</a>
   </p>
-  <br> &nbsp;
+  <br>
   <table class="table" border="=3">
     <thead>
     <tr>
@@ -36,6 +37,7 @@
       <td th:text="${especialista.horario}"></td>
       <td>
         <a th:href="@{/especialistas/editar/}+${especialista.id}" class="btn btn-warning">Modificar datos</a>
+        &nbsp;&nbsp;&nbsp;
         <a th:href="@{/especialistas/eliminar/}+${especialista.id}"  class="btn btn-danger">Eliminar</a>
       </td>
     </tr>

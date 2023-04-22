@@ -10,12 +10,13 @@
   <h1 align="center">
     Listado de citas
   </h1>
-  <br> &nbsp;
+  <br>
   <p align="center">
   <a th:href="@{/citas/generar}" class="btn btn-primary">Generar cita </a>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
   <a th:href="@{/incio}" class="btn btn-secondary">Ir al inicio</a>
   </p>
-  <br> &nbsp;
+  <br>
   <table class="table" border="3">
     <thead>
     <tr>
@@ -40,6 +41,7 @@
       <td th:text="${cita.consultorio}"></td>
       <td>
         <a th:href="@{/citas/editar/}+${cita.id}" class="btn btn-warning">Modificar datos</a>
+        &nbsp;&nbsp;&nbsp;
         <a th:href="@{/citas/eliminar/}+${cita.id}"  class="btn btn-danger">Eliminar</a>
       </td>
     </tr>
