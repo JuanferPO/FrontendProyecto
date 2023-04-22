@@ -7,11 +7,21 @@
 </head>
 <body>
 <br>
-<h1>
+<h1 align="center">
     Inicio
 </h1>
 <br> &nbsp;
-<a th:href="@{/citas}" class="btn btn-primary btn-lg">Ver citas</a>
-<a th:href="@{/especialistas}" class="btn btn-primary btn-lg">Ver especialistas</a>
+<p align="center">
+    <a th:href="@{/citas}" type="button" class="btn btn-primary btn-lg">Ver citas </a>
+    <br> &nbsp;
+    <br>
+    <a th:href="@{/citas/anadir}" type="button" class="btn btn-success btn-lg">Solicitar cita </a>
+    <br> &nbsp;
+    <br>
+    <a th:href="@{/especialistas}" class="btn btn-primary btn-lg">Ver especialistas</a>
+    <br> &nbsp;
+    <br>
+    <a th:href="@{/especialistas/anadir}" type="button" class="btn btn-success btn-lg">Agregar especialista </a>
+</p>
 </body>
 </html>
