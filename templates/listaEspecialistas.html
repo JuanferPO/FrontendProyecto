@@ -7,7 +7,10 @@
 </head>
 <body>
 <div class="container mt-4">
-  <a th:href="@{/citas/generar}" class="btn btn-primary">Generar cita</a>
+  <h1>
+    Listado de especialistas
+  </h1>
+  <a th:href="@{/especialistas/generar}" class="btn btn-primary">Agregar especialista</a>
   <a th:href="@{/incio}" class="btn btn-secondary">Ir al inicio</a>
   <table class="table" border="=3">
     <thead>
@@ -22,16 +25,14 @@
 
     </thead>
     <tbody>
-    <tr th:each="cita:${citas}">
-      <td th:text="${cita.id}"></td>
-      <td th:text="${cita.nombrePaciente}"></td>
-      <td th:text="${cita.procedimiento}"></td>
-      <td th:text="${cita.nombreEspecialista}"></td>
-      <td th:text="${cita.fechaAtención}"></td>
-      <td th:text="${cita.horaAtención}"></td>
+    <tr th:each="especialista:${citas}">
+      <td th:text="${especialista.id}"></td>
+      <td th:text="${especialista.nombre}"></td>
+      <td th:text="${especialista.especialidad}"></td>
+      <td th:text="${especialista.horario}"></td>
       <td>
-        <a th:href="@{/citas/editar/}+${cita.id}" class="btn btn-warning">Modificar datos</a>
-        <a th:href="@{/citas/eliminar/}+${cita.id}"  class="btn btn-danger">Eliminar</a>
+        <a th:href="@{/especialistas/editar/}+${especialista.id}" class="btn btn-warning">Modificar datos</a>
+        <a th:href="@{/especialistas/eliminar/}+${especialista.id}"  class="btn btn-danger">Eliminar</a>
       </td>
     </tr>
     </tbody>
