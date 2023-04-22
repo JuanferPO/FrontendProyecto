@@ -19,7 +19,6 @@
   <table class="table" border="3">
     <thead>
     <tr>
-      <th>Id</th>
       <th>Nombre</th>
       <th>Especialidad</th>
       <th>Horario de atención</th>
@@ -30,7 +29,6 @@
     </thead>
     <tbody>
     <tr th:each="especialista:${especialistas}">
-      <td th:text="${especialista.id}"></td>
       <td th:text="${especialista.nombre}"></td>
       <td th:text="${especialista.especialidad}"></td>
       <td th:text="${especialista.horario}"></td>
