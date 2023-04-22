@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Inicio</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+</head>
+<body>
+<br>
+<h1 align="center">
+    Inicio
+</h1>
+<br> &nbsp;
+<p align="center">
+    <a th:href="@{/citas}" type="button" class="btn btn-primary btn-lg">Ver citas </a>
+    <br> &nbsp;
+    <br>
+    <a th:href="@{/citas/anadir}" type="button" class="btn btn-success btn-lg">Solicitar cita </a>
+    <br> &nbsp;
+    <br>
+    <a th:href="@{/especialistas}" class="btn btn-primary btn-lg">Ver especialistas</a>
+    <br> &nbsp;
+    <br>
+    <a th:href="@{/especialistas/anadir}" type="button" class="btn btn-success btn-lg">Agregar especialista </a>
+</p>
+</body>
+</html>
