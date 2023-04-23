@@ -8,30 +8,31 @@
 <body>
 <div class="container mt-4">
   <div class="col-sm-6">
-    <form th:action="@{/save}" th:object="${persona}" method="POST">
+    <form th:action="@{/citas/guardar}" th:object="${cita}" method="POST">
       <div class="card">
         <div class="card-header">
-          <h3>
-
-          </h3>
+          <h1>
+            Solicitar cita
+          </h1>
         </div>
         <div class="card-body">
+          <a th:href="@{/citas}" class="btn btn-warning">Regresar al inicio</a>
+          <a th:href="@{/citas}" class="btn btn-warning">Regresar a la lista de citas</a>
           <div class="form-group">
             <label>ID</label>
             <input th:field="*{id}" type="text" class="form-control">
           </div>
           <div class="form-group">
-            <label>NOMBRE</label>
-            <input th:field="*{name}" type="text" class="form-control">
+            <label>Nombre del paciente</label>
+            <input th:field="*{nombrePaciente}" type="text" class="form-control">
           </div>
           <div class="form-group">
-            <label>TELEFONO</label>
-            <input th:field="*{telefono}" type="text" class="form-control">
+            <label>Procedimiento</label>
+            <input th:field="*{procedimiento}" type="text" class="form-control">
           </div>
         </div>
         <div class="card-footer">
           <input type="submit" value="Guardar" class="btn btn-success">
-          <a th:href="@{/listar/}" class="btn btn-warning">Atras</a>
         </div>
       </div>
 
