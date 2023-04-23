@@ -7,21 +7,29 @@
 </head>
 <body>
 <br>
-<h1 align="center">
-    Inicio
-</h1>
-<br> &nbsp;
-<p align="center">
-    <a th:href="@{/citas}" type="button" class="btn btn-primary btn-lg">Ver citas </a>
-    <br> &nbsp;
-    <br>
-    <a th:href="@{/citas/anadir}" type="button" class="btn btn-success btn-lg">Solicitar cita </a>
-    <br> &nbsp;
-    <br>
-    <a th:href="@{/especialistas}" class="btn btn-primary btn-lg">Ver especialistas</a>
-    <br> &nbsp;
-    <br>
-    <a th:href="@{/especialistas/anadir}" type="button" class="btn btn-success btn-lg">Agregar especialista </a>
-</p>
+<div class="container mt-2 col-sm-5">
+    <div class="card">
+        <div class="card-header">
+            <h1 align="center">
+                Inicio
+            </h1>
+        </div>
+        <div class="card-body">
+            <p align="center">
+                <a th:href="@{/citas}" type="button" class="btn btn-primary btn-lg">Ver citas </a>
+                <br> &nbsp;
+                <br>
+                <a th:href="@{/citas/anadir}" type="button" class="btn btn-success btn-lg">Solicitar cita </a>
+                <br> &nbsp;
+                <br>
+                <a th:href="@{/especialistas}" class="btn btn-primary btn-lg">Ver especialistas</a>
+                <br> &nbsp;
+                <br>
+                <a th:href="@{/especialistas/anadir}" type="button" class="btn btn-success btn-lg">Agregar especialista </a>
+            </p>
+        </div>
+        <div class="card-footer"></div>
+    </div>
+</div>
 </body>
 </html>
