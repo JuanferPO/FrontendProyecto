@@ -16,18 +16,28 @@
           </h1>
         </div>
         <div class="card-body">
-          <a th:href="@{/citas}" class="btn btn-warning">Regresar al inicio</a>
-          <a th:href="@{/citas}" class="btn btn-warning">Regresar a la lista de citas</a>
+          <a th:href="@{/citas}" class="btn btn-warning">Cancelar y regresar al inicio</a>
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          <a th:href="@{/citas}" class="btn btn-warning">Cancelar y regresar a la lista de citas</a>
+          <br>&nbsp;
           <div class="form-group">
-            <label>ID</label>
+            <p>
+              <label>ID</label>
+            </p>
             <input th:field="*{id}" type="text" class="form-control">
           </div>
+          <br>
           <div class="form-group">
-            <label>Nombre del paciente</label>
+            <p>
+              <label>Nombre del paciente</label>
+            </p>
             <input th:field="*{nombrePaciente}" type="text" class="form-control">
           </div>
+          <br>
           <div class="form-group">
-            <label>Procedimiento</label>
+            <p>
+              <label>Procedimiento</label>
+            </p>
             <input th:field="*{procedimiento}" type="text" class="form-control">
           </div>
         </div>
