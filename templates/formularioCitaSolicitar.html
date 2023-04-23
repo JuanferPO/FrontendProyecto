@@ -52,14 +52,32 @@
             <p>
               <label>Fecha de atención</label>
             </p>
-            <input th:field="*{procedimiento}" type="text" class="form-control">
+            <div class="form-inline">
+              <input th:field="*{fechaAtencionDia}" type="number" class="form-control" min="1" max="31">
+              &nbsp; de
+              <select th:field="*{fechaAtencionMes}" class="form-control">
+                <option>enero</option>
+                <option>febrero</option>
+                <option>marzo</option>
+                <option>abril</option>
+                <option>mayo</option>
+                <option>junio</option>
+                <option>agosto</option>
+                <option>septiembre</option>
+                <option>octubre</option>
+                <option>noviembre</option>
+                <option>diciembre</option>
+              </select>
+              &nbsp; de
+              <input th:field="*{fechaAtencionAño}" type="number" class="form-control">
+            </div>
           </div>
           <br>
           <div class="form-group">
             <p>
               <label>Hora de atencion</label>
             </p>
-            <input th:field="*{procedimiento}" type="text" class="form-control">
+            <input th:field="*{procedimiento}" type="number" class="form-control">
           </div>
           <br>
           <div class="form-group">
