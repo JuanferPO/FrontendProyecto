@@ -54,21 +54,22 @@
             </h5>
             </p>
             <label>
-              Día: <input th:field="*{fechaAtencionDia}" type="number" class="form-control" min="1" max="31">
-              Mes: <select th:field="*{fechaAtencionMes}" class="form-control">
-              <option>enero</option>
-              <option>febrero</option>
-              <option>marzo</option>
-              <option>abril</option>
-              <option>mayo</option>
-              <option>junio</option>
-              <option>agosto</option>
-              <option>septiembre</option>
-              <option>octubre</option>
-              <option>noviembre</option>
-              <option>diciembre</option>
-            </select>
-              Año: <input th:field="*{fechaAtencionAño}" type="number" class="form-control">
+              <input th:field="*{fechaAtencionDia}" type="number" class="form-control" min="1" max="31" placeholder="Día">
+              <select th:field="*{fechaAtencionMes}" class="form-control">
+                <option>Mes</option>
+                <option>enero</option>
+                <option>febrero</option>
+                <option>marzo</option>
+                <option>abril</option>
+                <option>mayo</option>
+                <option>junio</option>
+                <option>agosto</option>
+                <option>septiembre</option>
+                <option>octubre</option>
+                <option>noviembre</option>
+                <option>diciembre</option>
+              </select>
+              <input th:field="*{fechaAtencionAño}" type="number" class="form-control" placeholder="Año">
             </label>
           </div>
           <br>
@@ -86,11 +87,11 @@
               <label>
                 <input th:field="*{horaAtencionInicioH}" type="number" class="form-control" min="1" max="12" placeholder="hh">
                 <input th:field="*{horaAtencionInicioM}" type="number" class="form-control" min="0" max="59" placeholder="mm">
+                <select th:field="*{horaAtencionInicioP}" class="form-control">
+                  <option>a.m.</option>
+                  <option>p.m</option>
+                </select>
               </label>
-            </div>
-            <div class="form-check">
-              <input th:field="*{horaAtencionInicioP}" type="checkbox" class="form-check-input">
-              <label class="form-check-label">p.m.</label>
             </div>
             <p>
             <h6>
@@ -101,11 +102,11 @@
               <label>
                 <input th:field="*{horaAtencionFinH}" type="number" class="form-control" min="1" max="12" placeholder="hh">
                 <input th:field="*{horaAtencionFinM}" type="number" class="form-control" min="0" max="59" placeholder="mm">
+                <select th:field="*{horaAtencionFinP}" class="form-control">
+                  <option>a.m.</option>
+                  <option>p.m</option>
+                </select>
               </label>
-            </div>
-            <div class="form-check">
-              <input th:field="*{horaAtencionFinP}" type="checkbox" class="form-check-input">
-              <label class="form-check-label">p.m.</label>
             </div>
             <br>
           </div>
