@@ -2,7 +2,7 @@
 <html lang="en" xmlns:th="https://www.thymeleaf.org">
 <head>
   <meta charset="UTF-8">
-  <title>Datos cita</title>
+  <title>Agregar especialista</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
 </head>
 <body>
@@ -48,34 +48,49 @@
               Inicio:
             </h6>
             </p>
-            <div class="form-group">
-              <label>
+            <div class="row">
+              <div class="col-md-2">
                 <input th:field="*{horarioInicioH}" type="number" class="form-control" min="1" max="12" placeholder="hh">
+              </div>
+              <div class="col-md-1" align="center">
+                <label>:</label>
+              </div>
+              <div class="col-md-2">
                 <input th:field="*{horarioInicioM}" type="number" class="form-control" min="0" max="59" placeholder="mm">
-              </label>
-            </div>
-            <div class="form-check">
-              <input th:field="*{horarioInicioP}" type="checkbox" class="form-check-input">
-              <label class="form-check-label">p.m.</label>
+              </div>
+              <div class="col-md-2">
+                <select th:field="*{horarioInicioP}" class="form-control">
+                  <option>a.m.</option>
+                  <option>p.m</option>
+                </select>
+              </div>
             </div>
             <p>
             <h6>
               Fin:
             </h6>
             </p>
-            <div class="form-group">
-              <label>
+            <div class="row">
+              <div class="col-md-2">
                 <input th:field="*{horarioFinH}" type="number" class="form-control" min="1" max="12" placeholder="hh">
+              </div>
+              <div class="col-md-1" align="center">
+                <label>:</label>
+              </div>
+              <div class="col-md-2">
                 <input th:field="*{horarioFinM}" type="number" class="form-control" min="0" max="59" placeholder="mm">
-              </label>
+              </div>
+              <div class="col-md-2">
+                <select th:field="*{horarioFinP}" class="form-control">
+                  <option>a.m.</option>
+                  <option>p.m</option>
+                </select>
+              </div>
             </div>
-            <div class="form-check">
-              <input th:field="*{horarioFinP}" type="checkbox" class="form-check-input">
-              <label class="form-check-label">p.m.</label>
-            </div>
-            <h6>
-              Dias:
-            </h6>
+            <p>
+             <h6>
+                Dias:
+              </h6>
             </p>
             <div class="form-check">
               <input th:field="*{horarioDia1}" type="checkbox" class="form-check-input">
