@@ -2,20 +2,20 @@
 <html lang="en" xmlns:th="https://www.thymeleaf.org">
 <head>
   <meta charset="UTF-8">
-  <title>Modificar datos de especialista</title>
+  <title>Modificar datos del especialista</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
 </head>
 <body>
 <div class="container mt-4">
-  <div class="col-sm-6">
+  <div class="col-sm-6 mx-auto">
     <form th:action="@{/especialistas/guardar}" th:object="${especialista}" method="POST">
       <div class="card">
         <div class="card-header">
           <h1 align="center">
-            Modificar datos de especialista
+            Modificar datos del especialista
           </h1>
         </div>
-        <div class="card-body" >
+        <div class="card-body">
           <p align="center">
             <a th:href="@{/especialistas}" class="btn btn-warning">Cancelar y regresar al inicio</a>
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
