@@ -2,7 +2,7 @@
 <html lang="en" xmlns:th="https://www.thymeleaf.org">
 <head>
   <meta charset="UTF-8">
-  <title>Datos cita</title>
+  <title>Solicitar cita</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
 </head>
 <body>
@@ -22,36 +22,36 @@
           <br>&nbsp;
           <div class="form-group">
             <p>
-              <h5>
-                Nombre del paciente
-              </h5>
+            <h5>
+              Nombre del paciente
+            </h5>
             </p>
             <input th:field="*{nombrePaciente}" type="text" class="form-control">
           </div>
           <br>
           <div class="form-group">
             <p>
-              <h5>
-                Procedimiento
-              </h5>
+            <h5>
+              Procedimiento
+            </h5>
             </p>
             <input th:field="*{procedimiento}" type="text" class="form-control">
           </div>
           <br>
           <div class="form-group">
             <p>
-              <h5>
-                Nombre del especialista
-              </h5>
+            <h5>
+              Nombre del especialista
+            </h5>
             </p>
             <input th:field="*{nombreEspecialista}" type="text" class="form-control">
           </div>
           <br>
           <div class="form-group">
             <p>
-              <h5>
-                Fecha de atención
-              </h5>
+            <h5>
+              Fecha de atención
+            </h5>
             </p>
             <label>
               Día: <input th:field="*{fechaAtencionDia}" type="number" class="form-control" min="1" max="31">
@@ -72,48 +72,48 @@
             </label>
           </div>
           <br>
+          <div class="form-group">
             <p>
-              <h5>
-                Hora de atencion
-              </h5>
-              <br>
-              <h6>
-                Inicio:
-              </h6>
+            <h5>
+              Hora de atencion
+            </h5>
+            <br>
+            <h6>
+              Inicio:
+            </h6>
             </p>
-              <div class="form-group">
-                <label>
-                  hh: <input th:field="*{horaAtencionInicioH}" type="number" class="form-control" min="1" max="12">
-                  mm: <input th:field="*{horaAtencionInicioM}" type="number" class="form-control" min="0" max="59">
-                </label>
-              </div>
-              <br>
-              <div class="form-check">
-                <input type="checkbox" class="form-check-input">
-                <label th:field="*{horaAtencionInicioP}" class="form-check-label">p.m.</label>
-              </div>
+            <div class="form-group">
+              <label>
+                <input th:field="*{horaAtencionInicioH}" type="number" class="form-control" min="1" max="12" placeholder="hh">
+                <input th:field="*{horaAtencionInicioM}" type="number" class="form-control" min="0" max="59" placeholder="mm">
+              </label>
+            </div>
+            <div class="form-check">
+              <input th:field="*{horaAtencionInicioP}" type="checkbox" class="form-check-input">
+              <label class="form-check-label">p.m.</label>
+            </div>
             <p>
             <h6>
               Fin:
             </h6>
             </p>
-              <div class="form-group">
-                <label>
-                  hh: <input th:field="*{horaAtencionInicioH}" type="number" class="form-control" min="1" max="12">
-                  mm: <input th:field="*{horaAtencionInicioM}" type="number" class="form-control" min="0" max="59">
-                </label>
-              </div>
-              <br>
-              <div class="form-check">
-                <input type="checkbox" class="form-check-input">
-                <label th:field="*{horaAtencionInicioP}" class="form-check-label">p.m.</label>
-              </div>
-              <br>
-              <div class="form-group">
+            <div class="form-group">
+              <label>
+                <input th:field="*{horaAtencionFinH}" type="number" class="form-control" min="1" max="12" placeholder="hh">
+                <input th:field="*{horaAtencionFinM}" type="number" class="form-control" min="0" max="59" placeholder="mm">
+              </label>
+            </div>
+            <div class="form-check">
+              <input th:field="*{horaAtencionFinP}" type="checkbox" class="form-check-input">
+              <label class="form-check-label">p.m.</label>
+            </div>
+            <br>
+          </div>
+          <div class="form-group">
             <p>
-              <h5>
-                Consultorio
-              </h5>
+            <h5>
+              Consultorio
+            </h5>
             </p>
             <input th:field="*{consultorio}" type="text" class="form-control">
           </div>
