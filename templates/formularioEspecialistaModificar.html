@@ -11,15 +11,16 @@
     <form th:action="@{/especialistas/guardar}" th:object="${especialista}" method="POST">
       <div class="card">
         <div class="card-header">
-          <h1>
+          <h1 align="center">
             Modificar datos de especialista
           </h1>
         </div>
-        <div class="card-body">
-          <a th:href="@{/especialistas}" class="btn btn-warning">Cancelar y regresar al inicio</a>
-          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-          <a th:href="@{/inicio}" class="btn btn-warning">Cancelar y regresar a la lista de especialistas</a>
-          <br>&nbsp;
+        <div class="card-body" >
+          <p align="center">
+            <a th:href="@{/especialistas}" class="btn btn-warning">Cancelar y regresar al inicio</a>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <a th:href="@{/inicio}" class="btn btn-warning">Cancelar y regresar a la lista de especialistas</a>
+          </p>
           <div class="form-group">
             <p>
               <h5>
@@ -121,19 +122,13 @@
               <label class="form-check-label">Domingo</label>
             </div>
           </div>
-          <br>
         </div>
         <div class="card-footer">
-          <input type="submit" value="Guardar" class="btn btn-success">
+          <input type="submit" value="Guardar" class="btn btn-success btn-lg">
         </div>
       </div>
-
     </form>
-
   </div>
 </div>
-<table>
-
-</table>
 </body>
 </html>
