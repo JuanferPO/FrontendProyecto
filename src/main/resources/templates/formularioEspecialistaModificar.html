@@ -60,9 +60,9 @@
                 <input th:field="*{horarioInicioM}" type="number" class="form-control" min="0" max="59" placeholder="mm">
               </div>
               <div class="col-md-2">
-                <select th:field="*{horarioInicioP}" class="form-control">
+                <select th:field="*{horarioInicioA}" class="form-control">
                   <option>a.m.</option>
-                  <option>p.m</option>
+                  <option>p.m.</option>
                 </select>
               </div>
             </div>
@@ -82,9 +82,9 @@
                 <input th:field="*{horarioFinM}" type="number" class="form-control" min="0" max="59" placeholder="mm">
               </div>
               <div class="col-md-2">
-                <select th:field="*{horarioFinP}" class="form-control">
+                <select th:field="*{horarioFinA}" class="form-control">
                   <option>a.m.</option>
-                  <option>p.m</option>
+                  <option>p.m.</option>
                 </select>
               </div>
             </div>
@@ -94,31 +94,31 @@
               </h6>
             </p>
             <div class="form-check">
-              <input th:field="*{horarioDia1}" type="checkbox" class="form-check-input">
+              <input th:field="*{horarioDia[0]}" type="checkbox" class="form-check-input">
               <label class="form-check-label">Lunes</label>
             </div>
             <div class="form-check">
-              <input th:field="*{horarioDia2}" type="checkbox" class="form-check-input">
+              <input th:field="*{horarioDia[1]}" type="checkbox" class="form-check-input">
               <label class="form-check-label">Martes</label>
             </div>
             <div class="form-check">
-              <input th:field="*{horarioDia3}" type="checkbox" class="form-check-input">
+              <input th:field="*{horarioDia[2]}" type="checkbox" class="form-check-input">
               <label class="form-check-label">Miércoles</label>
             </div>
             <div class="form-check">
-              <input th:field="*{horarioDia4}" type="checkbox" class="form-check-input">
+              <input th:field="*{horarioDia[3]}" type="checkbox" class="form-check-input">
               <label class="form-check-label">Jueves</label>
             </div>
             <div class="form-check">
-              <input th:field="*{horarioDia5}" type="checkbox" class="form-check-input">
+              <input th:field="*{horarioDia[4]}" type="checkbox" class="form-check-input">
               <label class="form-check-label">Viernes</label>
             </div>
             <div class="form-check">
-              <input th:field="*{horarioDia6}" type="checkbox" class="form-check-input">
+              <input th:field="*{horarioDia[5]}" type="checkbox" class="form-check-input">
               <label class="form-check-label">Sábado</label>
             </div>
             <div class="form-check">
-              <input th:field="*{horarioDia7}" type="checkbox" class="form-check-input">
+              <input th:field="*{horarioDia[6]}" type="checkbox" class="form-check-input">
               <label class="form-check-label">Domingo</label>
             </div>
           </div>
