@@ -27,6 +27,8 @@ public class Especialista {
     private String horarioFinA;
     private boolean[] horarioDia = new boolean[7];
     public void generarHorario() {
+        this.generarHorarioInicio();
+        this.generarHorarioFin();
         DateTimeFormatter formato = DateTimeFormatter.ofPattern("h':'mm a");
         String dias="";
         int contDias=0;
@@ -82,26 +84,26 @@ public class Especialista {
         }
         if((this.horarioDia[5])&(contDias!=0)){
             if(contDias==totalDias){
-                dias = "Sábado";
+                dias = "Sábados";
             } else if (contDias==1) {
-                dias = dias + " y sábado";
+                dias = dias + " y sábados";
             } else {
-                dias = dias + ", sábado";
+                dias = dias + ", sábados";
             }
             contDias--;
         }
         if((this.horarioDia[6])&(contDias!=0)){
             if(contDias==totalDias){
-                dias = "Domingo";
+                dias = "Domingos";
             } else if (contDias==1) {
-                dias = dias + " y domingo";
+                dias = dias + " y domingos";
             }
         }
         this.horario = this.getHorarioInicio().format(formato)+" a "+this.getHorarioFin().format(formato)+"\n"
                 +dias;
     }
 
-    public void generarHorarioInicio() {
+    private void generarHorarioInicio() {
         int hora=this.getHorarioInicioH();
         if (hora==12){
             hora=0;
@@ -112,7 +114,7 @@ public class Especialista {
         this.horarioInicio = LocalTime.of(hora,this.getHorarioInicioM());
     }
 
-    public void generarHorarioFin() {
+    private void generarHorarioFin() {
         int hora=this.getHorarioFinH();
         if (hora==12){
             hora=0;

@@ -82,11 +82,13 @@ public class Cita {
     }
 
     public void generarHoraAtencion() {
+        this.generarHoraAtencionInicio();
+        this.generarHoraAtencionFin();
         DateTimeFormatter formato = DateTimeFormatter.ofPattern("h':'mm a");
         this.horaAtencion = this.getHoraAtencionInicio().format(formato)+" a "+this.getHoraAtencionFin().format(formato);
     }
 
-    public void generarHoraAtencionInicio() {
+    private void generarHoraAtencionInicio() {
         int hora=this.getHoraAtencionInicioH();
         if (hora==12){
             hora=0;
@@ -97,7 +99,7 @@ public class Cita {
         this.horaAtencionInicio = LocalTime.of(hora,this.getHoraAtencionInicioM());
     }
 
-    public void generarHoraAtencionFin() {
+    private void generarHoraAtencionFin() {
         int hora=this.getHoraAtencionFinH();
         if (hora==12){
             hora=0;
