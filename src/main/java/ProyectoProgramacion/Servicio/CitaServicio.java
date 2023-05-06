@@ -5,6 +5,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import ProyectoProgramacion.Modelo.Cita;
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class CitaServicio {
@@ -18,7 +19,11 @@ public class CitaServicio {
         return citaRepositorio.save(cita);
     }
 
-    public void borrarCita(Long id){
+    public Optional<Cita> obtenerCita(Long id){
+        return citaRepositorio.findById(id);
+    }
+
+    public void eliminarCita(Long id){
         citaRepositorio.deleteById(id);
     }
 

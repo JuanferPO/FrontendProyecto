@@ -5,6 +5,7 @@ import ProyectoProgramacion.Repositorio.EspecialistaRepositorio;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class EspecialistaServicio {
@@ -17,7 +18,11 @@ public class EspecialistaServicio {
         return especialistaRepositorio.save(especialista);
     }
 
-    public void borrarEspecialista(Long id){
+    public Optional<Especialista> obtenerEspecialista(Long id){
+        return especialistaRepositorio.findById(id);
+    }
+
+    public void eliminarEspecialista(Long id){
         especialistaRepositorio.deleteById(id);
     }
 
