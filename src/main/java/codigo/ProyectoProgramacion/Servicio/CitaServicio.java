@@ -1,9 +1,9 @@
-package ProyectoProgramacion.Servicio;
+package codigo.ProyectoProgramacion.Servicio;
 
-import ProyectoProgramacion.Repositorio.CitaRepositorio;
+import codigo.ProyectoProgramacion.Repositorio.CitaRepositorio;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import ProyectoProgramacion.Modelo.Cita;
+import codigo.ProyectoProgramacion.Modelo.Cita;
 
 import java.time.LocalDate;
 import java.time.LocalTime;

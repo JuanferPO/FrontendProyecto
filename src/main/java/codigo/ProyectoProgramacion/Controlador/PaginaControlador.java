@@ -1,4 +1,4 @@
-package ProyectoProgramacion.Controlador;
+package codigo.ProyectoProgramacion.Controlador;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;

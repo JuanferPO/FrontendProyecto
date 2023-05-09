@@ -1,4 +1,4 @@
-package ProyectoProgramacion;
+package codigo.ProyectoProgramacion;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

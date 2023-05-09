@@ -1,6 +1,6 @@
-package ProyectoProgramacion.Modelo;
+package codigo.ProyectoProgramacion.Modelo;
 
-import jakarta.persistence.*;
+import javax.persistence.*;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -12,6 +12,9 @@ import java.time.LocalTime;
 @Entity
 @Table(name = "Especialista")
 public class Especialista {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id")
     Long id;
     private String nombre;
     private String especialidad;

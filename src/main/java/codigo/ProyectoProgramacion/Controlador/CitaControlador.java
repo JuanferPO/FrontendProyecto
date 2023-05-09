@@ -1,7 +1,7 @@
-package ProyectoProgramacion.Controlador;
+package codigo.ProyectoProgramacion.Controlador;
 
-import ProyectoProgramacion.Modelo.Cita;
-import ProyectoProgramacion.Servicio.CitaServicio;
+import codigo.ProyectoProgramacion.Modelo.Cita;
+import codigo.ProyectoProgramacion.Servicio.CitaServicio;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;

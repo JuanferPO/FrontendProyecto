@@ -1,7 +1,7 @@
-package ProyectoProgramacion.Servicio;
+package codigo.ProyectoProgramacion.Servicio;
 
-import ProyectoProgramacion.Modelo.Especialista;
-import ProyectoProgramacion.Repositorio.EspecialistaRepositorio;
+import codigo.ProyectoProgramacion.Modelo.Especialista;
+import codigo.ProyectoProgramacion.Repositorio.EspecialistaRepositorio;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
