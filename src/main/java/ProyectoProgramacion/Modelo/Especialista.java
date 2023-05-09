@@ -18,11 +18,11 @@ public class Especialista {
     private String horario;
     private LocalTime horarioInicio;
     private LocalTime horarioFin;
-    private byte horarioInicioH;
-    private byte horarioInicioM;
+    private int horarioInicioH;
+    private int horarioInicioM;
     private String horarioInicioA;
-    private byte horarioFinH;
-    private byte horarioFinM;
+    private int horarioFinH;
+    private int horarioFinM;
     private String horarioFinA;
     private boolean horarioDia1;
     private boolean horarioDia2;
