@@ -23,46 +23,50 @@
           </p>
           <div class="form-group">
             <p>
-              <h5>
-                Nombre
-              </h5>
+            <h5>
+              Nombre
+            </h5>
             </p>
             <input th:field="*{nombre}" type="text" class="form-control">
           </div>
           <br>
           <div class="form-group">
             <p>
-              <h5>
-                Especialidad
-              </h5>
+            <h5>
+              Especialidad
+            </h5>
             </p>
             <input th:field="*{especialidad}" type="text" class="form-control">
           </div>
           <br>
-          <div class="form-group">
-            <p>
-            <h5>
-              Horario de atencion
-            </h5>
-            <br>
-            <h6>
-              Inicio:
-            </h6>
-            </p>
-            <div class="row">
-              <div class="col-md-2">
-                <input th:field="*{horarioInicioH}" type="number" class="form-control" min="1" max="12" placeholder="hh">
+          <p>
+          <h5>
+            Horario de atencion (Hora:Minuto)
+          </h5>
+          <br>
+          <h6>
+            Inicio:
+          </h6>
+          </p>
+          <div class="row">
+            <div class="col-md-2">
+              <div class="form-group">
+                <input th:field="*{horarioInicioH}" type="number" class="form-control" min="1" max="12">
               </div>
-              <div class="col-md-1" align="center">
-                <label>:</label>
+            </div>
+            <div class="col-md-1" align="center">
+              <label>:</label>
+            </div>
+            <div class="col-md-2">
+              <div class="form-group">
+                <input th:field="*{horarioInicioM}" type="number" class="form-control" min="0" max="59">
               </div>
-              <div class="col-md-2">
-                <input th:field="*{horarioInicioM}" type="number" class="form-control" min="0" max="59" placeholder="mm">
-              </div>
-              <div class="col-md-2">
+            </div>
+            <div class="col-md-2">
+              <div class="form-group">
                 <select th:field="*{horarioInicioA}" class="form-control">
-                  <option>a.m.</option>
-                  <option>p.m.</option>
+                  <option value="false">a.m.</option>
+                  <option value="true">p.m.</option>
                 </select>
               </div>
             </div>
@@ -73,54 +77,61 @@
             </p>
             <div class="row">
               <div class="col-md-2">
-                <input th:field="*{horarioFinH}" type="number" class="form-control" min="1" max="12" placeholder="hh">
+                <div class="form-group">
+                  <input th:field="*{horarioFinH}" type="number" class="form-control" min="1" max="12">
+                </div>
               </div>
               <div class="col-md-1" align="center">
                 <label>:</label>
               </div>
               <div class="col-md-2">
-                <input th:field="*{horarioFinM}" type="number" class="form-control" min="0" max="59" placeholder="mm">
+                <div class="form-group">
+                  <input th:field="*{horarioFinM}" type="number" class="form-control" min="0" max="59">
+                </div>
               </div>
               <div class="col-md-2">
-                <select th:field="*{horarioFinA}" class="form-control">
-                  <option>a.m.</option>
-                  <option>p.m.</option>
-                </select>
+                <div class="form-group">
+                  <select th:field="*{horarioFinA}" class="form-control">
+                    <option value="false">a.m.</option>
+                    <option value="true">p.m.</option>
+                  </select>
+                </div>
               </div>
             </div>
-            <p>
-             <h6>
-                Dias:
-              </h6>
-            </p>
-            <div class="form-check">
-              <input th:field="*{horarioDia1}" type="checkbox" class="form-check-input">
-              <label class="form-check-label">Lunes</label>
-            </div>
-            <div class="form-check">
-              <input th:field="*{horarioDia2}" type="checkbox" class="form-check-input">
-              <label class="form-check-label">Martes</label>
-            </div>
-            <div class="form-check">
-              <input th:field="*{horarioDia3}" type="checkbox" class="form-check-input">
-              <label class="form-check-label">Miércoles</label>
-            </div>
-            <div class="form-check">
-              <input th:field="*{horarioDia4}" type="checkbox" class="form-check-input">
-              <label class="form-check-label">Jueves</label>
-            </div>
-            <div class="form-check">
-              <input th:field="*{horarioDia5}" type="checkbox" class="form-check-input">
-              <label class="form-check-label">Viernes</label>
-            </div>
-            <div class="form-check">
-              <input th:field="*{horarioDia6}" type="checkbox" class="form-check-input">
-              <label class="form-check-label">Sábados</label>
-            </div>
-            <div class="form-check">
-              <input th:field="*{horarioDia7}" type="checkbox" class="form-check-input">
-              <label class="form-check-label">Domingos</label>
-            </div>
+            <br>
+          </div>
+          <p>
+          <h6>
+            Dias:
+          </h6>
+          </p>
+          <div class="form-check">
+            <input th:field="*{horarioDia1}" type="checkbox" class="form-check-input">
+            <label class="form-check-label">Lunes</label>
+          </div>
+          <div class="form-check">
+            <input th:field="*{horarioDia2}" type="checkbox" class="form-check-input">
+            <label class="form-check-label">Martes</label>
+          </div>
+          <div class="form-check">
+            <input th:field="*{horarioDia3}" type="checkbox" class="form-check-input">
+            <label class="form-check-label">Miércoles</label>
+          </div>
+          <div class="form-check">
+            <input th:field="*{horarioDia4}" type="checkbox" class="form-check-input">
+            <label class="form-check-label">Jueves</label>
+          </div>
+          <div class="form-check">
+            <input th:field="*{horarioDia5}" type="checkbox" class="form-check-input">
+            <label class="form-check-label">Viernes</label>
+          </div>
+          <div class="form-check">
+            <input th:field="*{horarioDia6}" type="checkbox" class="form-check-input">
+            <label class="form-check-label">Sábados</label>
+          </div>
+          <div class="form-check">
+            <input th:field="*{horarioDia7}" type="checkbox" class="form-check-input">
+            <label class="form-check-label">Domingos</label>
           </div>
         </div>
         <div class="card-footer">

@@ -23,10 +23,10 @@ public class Especialista {
     private LocalTime horarioFin;
     private int horarioInicioH;
     private int horarioInicioM;
-    private String horarioInicioA;
+    private boolean horarioInicioA;
     private int horarioFinH;
     private int horarioFinM;
-    private String horarioFinA;
+    private boolean horarioFinA;
     private boolean horarioDia1;
     private boolean horarioDia2;
     private boolean horarioDia3;
