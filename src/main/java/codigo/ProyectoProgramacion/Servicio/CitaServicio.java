@@ -16,11 +16,17 @@ public class CitaServicio {
 
     @Autowired
     private CitaRepositorio citaRepositorio;
+    private Cita citaEditar;
 
-    public Cita guardarCita(Cita cita){
+    public Cita guardarCitaAnadir(Cita cita){
         generarFechaAtencion(cita);
         generarHoraAtencion(cita);
         return citaRepositorio.save(cita);
+    }
+
+    public Cita guardarCitaEditar(Cita cita){
+        citaRepositorio.delete(this.citaEditar);
+        return this.guardarCitaAnadir(cita);
     }
 
     public Optional<Cita> obtenerCita(int id){
@@ -68,4 +74,7 @@ public class CitaServicio {
         cita.setHoraAtencionFin(LocalTime.of(hora,cita.getHoraAtencionFinM()));
     }
 
+    public void setCitaEditar(Cita citaEditar) {
+        this.citaEditar = citaEditar;
+    }
 }

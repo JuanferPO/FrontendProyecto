@@ -33,17 +33,24 @@ public class CitaControlador {
         return "formularioCitaSolicitar";
     }
 
-    @PostMapping("/citas/guardar")
-    public String guardarCita(@Validated Cita cita){
-        citaServicio.guardarCita(cita);
+    @PostMapping("/citas/anadir/guardar")
+    public String guardarCitaAnadir(@Validated Cita cita){
+        citaServicio.guardarCitaAnadir(cita);
         return "redirect:/citas";
     }
 
     @GetMapping("/citas/editar/{id}")
     public String editarCita(@PathVariable int id, Model model){
         Optional<Cita> cita = citaServicio.obtenerCita(id);
+        citaServicio.setCitaEditar(cita.get());
         model.addAttribute("cita", cita);
         return "formularioCitaModificar";
+    }
+
+    @PostMapping("/citas/editar/guardar")
+    public String guardarCitaEditar(@Validated Cita cita){
+        citaServicio.guardarCitaEditar(cita);
+        return "redirect:/citas";
     }
 
     @GetMapping("/citas/eliminar/{id}")

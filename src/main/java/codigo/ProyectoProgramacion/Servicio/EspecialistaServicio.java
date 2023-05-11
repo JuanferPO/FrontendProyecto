@@ -1,5 +1,6 @@
 package codigo.ProyectoProgramacion.Servicio;
 
+import codigo.ProyectoProgramacion.Modelo.Cita;
 import codigo.ProyectoProgramacion.Modelo.Especialista;
 import codigo.ProyectoProgramacion.Repositorio.EspecialistaRepositorio;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,10 +16,16 @@ public class EspecialistaServicio {
 
     @Autowired
     private EspecialistaRepositorio especialistaRepositorio;
+    private Especialista especialistaEditar;
 
-    public Especialista guardarEspecialista(Especialista especialista){
+    public Especialista guardarEspecialistaAnadir(Especialista especialista){
         generarHorario(especialista);
         return especialistaRepositorio.save(especialista);
+    }
+
+    public Especialista guardarEspecialistaEditar(Especialista especialista){
+        especialistaRepositorio.delete(this.especialistaEditar);
+        return this.guardarEspecialistaAnadir(especialista);
     }
 
     public Optional<Especialista> obtenerEspecialista(int id){
@@ -148,4 +155,7 @@ public class EspecialistaServicio {
         especialista.setHorarioFin(LocalTime.of(hora,especialista.getHorarioFinM()));
     }
 
+    public void setEspecialistaEditar(Especialista especialistaEditar) {
+        this.especialistaEditar = especialistaEditar;
+    }
 }

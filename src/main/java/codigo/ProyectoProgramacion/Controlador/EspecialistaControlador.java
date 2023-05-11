@@ -33,17 +33,24 @@ public class EspecialistaControlador {
         return "formularioEspecialistaAgregar";
     }
 
-    @PostMapping("/especialistas/guardar")
-    public String guardarEspecialista(@Validated Especialista especialista){
-        especialistaServicio.guardarEspecialista(especialista);
+    @PostMapping("/especialistas/anadir/guardar")
+    public String guardarEspecialistaAnadir(@Validated Especialista especialista){
+        especialistaServicio.guardarEspecialistaAnadir(especialista);
         return "redirect:/especialistas";
     }
 
     @GetMapping("/especialistas/editar/{id}")
     public String editarEspecialista(@PathVariable int id, Model model){
         Optional<Especialista> especialista = especialistaServicio.obtenerEspecialista(id);
+        especialistaServicio.setEspecialistaEditar(especialista.get());
         model.addAttribute("especialista", especialista);
         return "formularioEspecialistaModificar";
+    }
+
+    @PostMapping("/especialistas/editar/guardar")
+    public String guardarEspecialistaEditar(@Validated Especialista especialista){
+        especialistaServicio.guardarEspecialistaEditar(especialista);
+        return "redirect:/especialistas";
     }
 
     @GetMapping("/especialistas/eliminar/{id}")
