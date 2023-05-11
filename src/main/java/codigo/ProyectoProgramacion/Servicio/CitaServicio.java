@@ -36,48 +36,7 @@ public class CitaServicio {
     }
     
     public void generarFechaAtencion(Cita cita) {
-        int mes;
-        switch (cita.getFechaAtencionMes()){
-            case "enero":
-                mes=1;
-                break;
-            case "febrero":
-                mes=2;
-                break;
-            case "marzo":
-                mes=3;
-                break;
-            case "abril":
-                mes=4;
-                break;
-            case "mayo":
-                mes=5;
-                break;
-            case "junio":
-                mes=6;
-                break;
-            case "julio":
-                mes=7;
-                break;
-            case "agosto":
-                mes=8;
-                break;
-            case "septiembre":
-                mes=9;
-                break;
-            case "octubre":
-                mes=10;
-                break;
-            case "noviembre":
-                mes=11;
-                break;
-            case "diciembre":
-                mes=12;
-                break;
-            default:
-                throw new RuntimeException();
-        }
-        cita.setFechaAtencion(LocalDate.of(cita.getFechaAtencionAno(),mes,cita.getFechaAtencionDia()));
+        cita.setFechaAtencion(LocalDate.of(cita.getFechaAtencionAno(),cita.getFechaAtencionMes()+1,cita.getFechaAtencionDia()));
     }
 
     private void generarHoraAtencion(Cita cita) {
@@ -88,25 +47,24 @@ public class CitaServicio {
     }
 
     private void generarHoraAtencionInicio(Cita cita) {
-        int hora=cita.getHoraAtencionInicioH();
-        if (hora==12){
-            hora=0;
+        if (cita.getHoraAtencionInicioH()==12){
+            cita.setHoraAtencionInicioH(0);
         }
-        if (cita.getHoraAtencionInicioA().equals("p.m.")){
-            hora+=12;
+        if (cita.isHoraAtencionInicioA()){
+            cita.setHoraAtencionInicioH(cita.getHoraAtencionInicioH()+12);
         }
-        cita.setHoraAtencionInicio(LocalTime.of(hora,cita.getHoraAtencionInicioM()));
+        cita.setHoraAtencionInicio(LocalTime.of(cita.getHoraAtencionInicioH(),cita.getHoraAtencionInicioM()));
     }
 
     private void generarHoraAtencionFin(Cita cita) {
         int hora=cita.getHoraAtencionFinH();
-        if (hora==12){
-            hora=0;
+        if (cita.getHoraAtencionFinH()==12){
+            cita.setHoraAtencionFinH(0);
         }
-        if (cita.getHoraAtencionFinA().equals("p.m.")){
-            hora+=12;
+        if (cita.isHoraAtencionFinA()){
+            cita.setHoraAtencionFinH(cita.getHoraAtencionFinH()+12);
         }
-        cita.setHoraAtencionFin(LocalTime.of(hora,cita.getHoraAtencionFinM()));
+        cita.setHoraAtencionFin(LocalTime.of(cita.getHoraAtencionFinH(),cita.getHoraAtencionFinM()));
     }
 
 }

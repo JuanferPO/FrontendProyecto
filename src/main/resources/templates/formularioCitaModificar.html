@@ -48,104 +48,113 @@
             <input th:field="*{nombreEspecialista}" type="text" class="form-control">
           </div>
           <br>
-          <div class="form-group">
-            <p>
+          <p>
             <h5>
-              Fecha de atención
+            Fecha de atención (Día/Mes/Año)
             </h5>
-            </p>
-            <div class="row">
-              <div class="col-md-2">
-                <input th:field="*{fechaAtencionDia}" type="number" class="form-control" min="1" max="31" placeholder="Día">
+          </p>
+          <div class="row">
+            <div class="col-md-2">
+              <div class="form-group">
+                <input th:field="*{fechaAtencionDia}" type="number" class="form-control" min="1" max="31">
               </div>
-              <div class="col-md-1" align="center">
-                <label>de</label>
-              </div>
-              <div class="col-md-3">
+            </div>
+            <div class="col-md-1" align="center">
+              <label>de</label>
+            </div>
+            <div class="col-md-3">
+              <div class="form-group">
                 <select th:field="*{fechaAtencionMes}" class="form-control">
-                  <option>Mes</option>
-                  <option>enero</option>
-                  <option>febrero</option>
-                  <option>marzo</option>
-                  <option>abril</option>
-                  <option>mayo</option>
-                  <option>junio</option>
-                  <option>julio</option>
-                  <option>agosto</option>
-                  <option>septiembre</option>
-                  <option>octubre</option>
-                  <option>noviembre</option>
-                  <option>diciembre</option>
+                  <option value="0">enero</option>
+                  <option value="1">febrero</option>
+                  <option value="2">marzo</option>
+                  <option value="3">abril</option>
+                  <option value="4">mayo</option>
+                  <option value="5">junio</option>
+                  <option value="6">julio</option>
+                  <option value="7">agosto</option>
+                  <option value="8">septiembre</option>
+                  <option value="9">octubre</option>
+                  <option value="10">noviembre</option>
+                  <option value="11">diciembre</option>
                 </select>
               </div>
-              <div class="col-md-1" align="center">
-                <label>de</label>
-              </div>
-              <div class="col-md-2">
-                <input th:field="*{fechaAtencionAno}" type="number" class="form-control" placeholder="Año">
+            </div>
+            <div class="col-md-1" align="center">
+              <label>de</label>
+            </div>
+            <div class="col-md-2">
+              <div class="form-group">
+                <input th:field="*{fechaAtencionAno}" type="number" class="form-control">
               </div>
             </div>
           </div>
           <br>
-          <div class="form-group">
-            <p>
+          <p>
             <h5>
-              Hora de atencion
+              Hora de atencion (Hora:Minuto)
             </h5>
             <br>
             <h6>
               Inicio:
             </h6>
-            </p>
-            <div class="form-group">
-              <div class="row">
-                <div class="col-md-2">
-                  <input th:field="*{horaAtencionInicioH}" type="number" class="form-control" min="1" max="12" placeholder="hh">
-                </div>
-                <div class="col-md-1" align="center">
-                  <label>:</label>
-                </div>
-                <div class="col-md-2">
-                  <input th:field="*{horaAtencionInicioM}" type="number" class="form-control" min="0" max="59" placeholder="mm">
-                </div>
-                <div class="col-md-2">
-                  <select th:field="*{horaAtencionInicioA}" class="form-control">
-                    <option>a.m.</option>
-                    <option>p.m</option>
-                  </select>
-                </div>
+          </p>
+          <div class="row">
+            <div class="col-md-2">
+              <div class="form-group">
+                <input th:field="*{horaAtencionInicioH}" type="number" class="form-control" min="1" max="12">
+              </div>
+            </div>
+            <div class="col-md-1" align="center">
+              <label>:</label>
+            </div>
+            <div class="col-md-2">
+              <div class="form-group">
+                <input th:field="*{horaAtencionInicioM}" type="number" class="form-control" min="0" max="59">
+              </div>
+            </div>
+            <div class="col-md-2">
+              <div class="form-group">
+                <select th:field="*{horaAtencionInicioA}" class="form-control">
+                  <option value="false">a.m.</option>
+                  <option value="true">p.m.</option>
+                </select>
               </div>
             </div>
             <p>
-            <h6>
-              Fin:
-            </h6>
+              <h6>
+                Fin:
+              </h6>
             </p>
-            <div class="form-group">
-              <div class="row">
-                <div class="col-md-2">
-                  <input th:field="*{horaAtencionFinH}" type="number" class="form-control" min="1" max="12" placeholder="hh">
+            <div class="row">
+              <div class="col-md-2">
+                <div class="form-group">
+                  <input th:field="*{horaAtencionFinH}" type="number" class="form-control" min="1" max="12">
                 </div>
-                <div class="col-md-1" align="center">
-                  <label>:</label>
+              </div>
+              <div class="col-md-1" align="center">
+                <label>:</label>
+              </div>
+              <div class="col-md-2">
+                <div class="form-group">
+                  <input th:field="*{horaAtencionFinM}" type="number" class="form-control" min="0" max="59">
                 </div>
-                <div class="col-md-2">
-                  <input th:field="*{horaAtencionFinM}" type="number" class="form-control" min="0" max="59" placeholder="mm">
-                </div>
-                <div class="col-md-2">
+              </div>
+              <div class="col-md-2">
+                <div class="form-group">
                   <select th:field="*{horaAtencionFinA}" class="form-control">
-                    <option>a.m.</option>
-                    <option>p.m.</option>
+                    <option value="false">a.m.</option>
+                    <option value="true">p.m.</option>
                   </select>
                 </div>
               </div>
             </div>
             <br>
-          </div>
-          <div class="form-group">
-            <p>
-            <h5>
-              Consultorio
+            </div>
+            <div class="form-group">
+              <p>
+              <h5>
+                Consultorio
             </h5>
             </p>
             <input th:field="*{consultorio}" type="text" class="form-control">

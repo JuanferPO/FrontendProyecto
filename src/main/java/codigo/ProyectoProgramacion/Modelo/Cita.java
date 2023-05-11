@@ -26,12 +26,12 @@ public class Cita {
     private LocalTime horaAtencionInicio;
     private LocalTime horaAtencionFin;
     private int fechaAtencionDia;
-    private String fechaAtencionMes;
+    private int fechaAtencionMes;
     private int fechaAtencionAno;
     private int horaAtencionInicioH;
     private int horaAtencionInicioM;
-    private String horaAtencionInicioA;
+    private boolean horaAtencionInicioA;
     private int horaAtencionFinH;
     private int horaAtencionFinM;
-    private String horaAtencionFinA;
+    private boolean horaAtencionFinA;
 }
