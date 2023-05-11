@@ -21,11 +21,11 @@ public class EspecialistaServicio {
         return especialistaRepositorio.save(especialista);
     }
 
-    public Optional<Especialista> obtenerEspecialista(Long id){
+    public Optional<Especialista> obtenerEspecialista(int id){
         return especialistaRepositorio.findById(id);
     }
 
-    public void eliminarEspecialista(Long id){
+    public void eliminarEspecialista(int id){
         especialistaRepositorio.deleteById(id);
     }
 

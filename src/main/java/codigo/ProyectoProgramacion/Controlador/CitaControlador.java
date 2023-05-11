@@ -22,7 +22,7 @@ public class CitaControlador {
 
     @GetMapping("/citas")
     public String listarCitas(Model model){
-        List<Cita>citas= citaServicio.listarCitas();
+        List<Cita> citas = citaServicio.listarCitas();
         model.addAttribute("citas", citas);
         return "listaCitas";
     }
@@ -40,14 +40,14 @@ public class CitaControlador {
     }
 
     @GetMapping("/citas/editar/{id}")
-    public String editarCita(@PathVariable Long id, Model model){
+    public String editarCita(@PathVariable int id, Model model){
         Optional<Cita> cita = citaServicio.obtenerCita(id);
         model.addAttribute("cita", cita);
         return "formularioCitaModificar";
     }
 
     @GetMapping("/citas/eliminar/{id}")
-    public String eliminarCita(@PathVariable Long id){
+    public String eliminarCita(@PathVariable int id){
         citaServicio.eliminarCita(id);
         return "redirect:/citas";
     }

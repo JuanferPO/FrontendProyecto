@@ -15,7 +15,7 @@ public class Especialista {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
-    Long id;
+    int id;
     private String nombre;
     private String especialidad;
     private String horario;

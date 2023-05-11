@@ -16,7 +16,7 @@ public class Cita {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
-    Long id;
+    int id;
     private String nombrePaciente;
     private String procedimiento;
     private String nombreEspecialista;

@@ -23,11 +23,11 @@ public class CitaServicio {
         return citaRepositorio.save(cita);
     }
 
-    public Optional<Cita> obtenerCita(Long id){
+    public Optional<Cita> obtenerCita(int id){
         return citaRepositorio.findById(id);
     }
 
-    public void eliminarCita(Long id){
+    public void eliminarCita(int id){
         citaRepositorio.deleteById(id);
     }
 

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1:3307
--- Tiempo de generación: 09-05-2023 a las 15:13:25
+-- Tiempo de generación: 09-05-2023 a las 19:35:06
 -- Versión del servidor: 10.4.27-MariaDB
 -- Versión de PHP: 8.2.0
 
@@ -29,23 +29,23 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `cita` (
   `id` int(11) NOT NULL,
-  `nombrePaciente` varchar(50) NOT NULL,
   `procedimiento` varchar(30) NOT NULL,
-  `nombreEspecialista` varchar(50) NOT NULL,
-  `fechaAtencion` date NOT NULL,
-  `horaAtencion` varchar(25) NOT NULL,
   `consultorio` varchar(30) NOT NULL,
-  `horaAtencionInicio` time NOT NULL,
-  `horaAtencionFin` time NOT NULL,
-  `fechaAtencionDia` int(11) NOT NULL,
-  `fechaAtencionMes` varchar(10) NOT NULL,
-  `fechaAtencionAno` int(11) NOT NULL,
-  `horaAtencionInicioH` int(11) NOT NULL,
-  `horaAtencionInicioM` int(11) NOT NULL,
-  `horaAtencionInicioA` varchar(12) NOT NULL,
-  `horaAtencionFinH` int(11) NOT NULL,
-  `horaAtencionFinM` int(11) NOT NULL,
-  `horaAtencionFinA` varchar(12) NOT NULL
+  `fecha_atencion` date DEFAULT NULL,
+  `fecha_atencion_ano` int(11) NOT NULL,
+  `fecha_atencion_dia` int(11) NOT NULL,
+  `fecha_atencion_mes` varchar(10) DEFAULT NULL,
+  `hora_atencion` varchar(25) DEFAULT NULL,
+  `hora_atencion_fin` time DEFAULT NULL,
+  `hora_atencion_fina` varchar(5) DEFAULT NULL,
+  `hora_atencion_finh` int(11) NOT NULL,
+  `hora_atencion_finm` int(11) NOT NULL,
+  `hora_atencion_inicio` time DEFAULT NULL,
+  `hora_atencion_inicioa` varchar(5) DEFAULT NULL,
+  `hora_atencion_inicioh` int(11) NOT NULL,
+  `hora_atencion_iniciom` int(11) NOT NULL,
+  `nombre_especialista` varchar(50) DEFAULT NULL,
+  `nombre_paciente` varchar(50) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
@@ -59,21 +59,21 @@ CREATE TABLE `especialista` (
   `nombre` varchar(50) NOT NULL,
   `especialidad` varchar(30) NOT NULL,
   `horario` varchar(75) NOT NULL,
-  `horarioInicio` time NOT NULL,
-  `horarioFin` time NOT NULL,
-  `horarioInicioH` int(11) NOT NULL,
-  `horarioInicioM` int(11) NOT NULL,
-  `horarioInicioA` varchar(5) NOT NULL,
-  `horarioFinH` int(11) NOT NULL,
-  `horarioFinM` int(11) NOT NULL,
-  `horarioFinA` varchar(5) NOT NULL,
-  `horarioDia1` tinyint(1) NOT NULL,
-  `horarioDia2` tinyint(1) NOT NULL,
-  `horarioDia3` tinyint(1) NOT NULL,
-  `horarioDia4` tinyint(1) NOT NULL,
-  `horarioDia5` tinyint(1) NOT NULL,
-  `horarioDia6` tinyint(1) NOT NULL,
-  `horarioDia7` tinyint(1) NOT NULL
+  `horario_dia1` bit(1) NOT NULL,
+  `horario_dia2` bit(1) NOT NULL,
+  `horario_dia3` bit(1) NOT NULL,
+  `horario_dia4` bit(1) NOT NULL,
+  `horario_dia5` bit(1) NOT NULL,
+  `horario_dia6` bit(1) NOT NULL,
+  `horario_dia7` bit(1) NOT NULL,
+  `horario_fin` time DEFAULT NULL,
+  `horario_fina` varchar(5) DEFAULT NULL,
+  `horario_finh` int(11) NOT NULL,
+  `horario_finm` int(11) NOT NULL,
+  `horario_inicio` time DEFAULT NULL,
+  `horario_inicioa` varchar(5) DEFAULT NULL,
+  `horario_inicioh` int(11) NOT NULL,
+  `horario_iniciom` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --

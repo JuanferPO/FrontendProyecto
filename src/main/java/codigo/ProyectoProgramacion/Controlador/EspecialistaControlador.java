@@ -22,7 +22,7 @@ public class EspecialistaControlador {
 
     @GetMapping("/especialistas")
     public String listarEspecialistas(Model model){
-        List<Especialista>especialistas= especialistaServicio.listarEspecialistas();
+        List<Especialista> especialistas = especialistaServicio.listarEspecialistas();
         model.addAttribute("especialistas", especialistas);
         return "listaEspecialistas";
     }
@@ -40,14 +40,14 @@ public class EspecialistaControlador {
     }
 
     @GetMapping("/especialistas/editar/{id}")
-    public String editarEspecialista(@PathVariable Long id, Model model){
+    public String editarEspecialista(@PathVariable int id, Model model){
         Optional<Especialista> especialista = especialistaServicio.obtenerEspecialista(id);
         model.addAttribute("especialista", especialista);
         return "formularioEspecialistaModificar";
     }
 
     @GetMapping("/especialistas/eliminar/{id}")
-    public String eliminarEspecialista(@PathVariable Long id){
+    public String eliminarEspecialista(@PathVariable int id){
         especialistaServicio.eliminarEspecialista(id);
         return "redirect:/especialistas";
     }
