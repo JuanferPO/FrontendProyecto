@@ -1,6 +1,5 @@
 package codigo.ProyectoProgramacion.Servicio;
 
-import codigo.ProyectoProgramacion.Modelo.Cita;
 import codigo.ProyectoProgramacion.Modelo.Especialista;
 import codigo.ProyectoProgramacion.Repositorio.EspecialistaRepositorio;
 import org.springframework.beans.factory.annotation.Autowired;

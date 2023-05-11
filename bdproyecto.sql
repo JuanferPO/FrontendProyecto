@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1:3307
--- Tiempo de generación: 09-05-2023 a las 19:35:06
+-- Tiempo de generación: 11-05-2023 a las 22:57:14
 -- Versión del servidor: 10.4.27-MariaDB
 -- Versión de PHP: 8.2.0
 
@@ -31,7 +31,7 @@ CREATE TABLE `cita` (
   `id` int(11) NOT NULL,
   `procedimiento` varchar(30) NOT NULL,
   `consultorio` varchar(30) NOT NULL,
-  `fecha_atencion` date DEFAULT NULL,
+  `fecha_atencion` varchar(35) DEFAULT NULL,
   `fecha_atencion_ano` int(11) NOT NULL,
   `fecha_atencion_dia` int(11) NOT NULL,
   `fecha_atencion_mes` varchar(10) DEFAULT NULL,
@@ -48,6 +48,13 @@ CREATE TABLE `cita` (
   `nombre_paciente` varchar(50) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--
+-- Volcado de datos para la tabla `cita`
+--
+
+INSERT INTO `cita` (`id`, `procedimiento`, `consultorio`, `fecha_atencion`, `fecha_atencion_ano`, `fecha_atencion_dia`, `fecha_atencion_mes`, `hora_atencion`, `hora_atencion_fin`, `hora_atencion_fina`, `hora_atencion_finh`, `hora_atencion_finm`, `hora_atencion_inicio`, `hora_atencion_inicioa`, `hora_atencion_inicioh`, `hora_atencion_iniciom`, `nombre_especialista`, `nombre_paciente`) VALUES
+(24, 'eagvryeb', 'byrhyyt', '5  de febrero  de  2024', 2024, 5, '1', '7:00 p. m. a 12:00 a. m.', '00:00:00', '0', 12, 0, '19:00:00', '1', 7, 0, 'rtbtent', 'reqtgry');
+
 -- --------------------------------------------------------
 
 --
@@ -58,7 +65,7 @@ CREATE TABLE `especialista` (
   `id` int(11) NOT NULL,
   `nombre` varchar(50) NOT NULL,
   `especialidad` varchar(30) NOT NULL,
-  `horario` varchar(75) NOT NULL,
+  `horario` varchar(100) NOT NULL,
   `horario_dia1` bit(1) NOT NULL,
   `horario_dia2` bit(1) NOT NULL,
   `horario_dia3` bit(1) NOT NULL,
@@ -100,13 +107,13 @@ ALTER TABLE `especialista`
 -- AUTO_INCREMENT de la tabla `cita`
 --
 ALTER TABLE `cita`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
 
 --
 -- AUTO_INCREMENT de la tabla `especialista`
 --
 ALTER TABLE `especialista`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
