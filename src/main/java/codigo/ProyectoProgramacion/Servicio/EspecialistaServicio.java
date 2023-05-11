@@ -127,23 +127,25 @@ public class EspecialistaServicio {
     }
 
     private void generarHorarioInicio(Especialista especialista) {
-        if (especialista.getHorarioInicioH()==12){
-            especialista.setHorarioInicioH(0);
+        int hora=especialista.getHorarioInicioH();
+        if (hora==12){
+            hora=0;
         }
         if (especialista.isHorarioInicioA()){
-            especialista.setHorarioInicioH(especialista.getHorarioInicioH()+12);
+            hora+=12;
         }
-        especialista.setHorarioInicio(LocalTime.of(especialista.getHorarioInicioH(),especialista.getHorarioInicioM()));
+        especialista.setHorarioInicio(LocalTime.of(hora,especialista.getHorarioInicioM()));
     }
 
     private void generarHorarioFin(Especialista especialista) {
-        if (especialista.getHorarioFinH()==12){
-            especialista.setHorarioFinH(0);
+        int hora=especialista.getHorarioFinH();
+        if (hora==12){
+            hora=0;
         }
         if (especialista.isHorarioFinA()){
-            especialista.setHorarioFinH(especialista.getHorarioFinH()+12);
+            hora+=12;
         }
-        especialista.setHorarioFin(LocalTime.of(especialista.getHorarioFinH(),especialista.getHorarioFinM()));
+        especialista.setHorarioFin(LocalTime.of(hora,especialista.getHorarioFinM()));
     }
 
 }

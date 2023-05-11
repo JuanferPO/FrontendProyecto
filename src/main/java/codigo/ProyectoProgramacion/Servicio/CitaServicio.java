@@ -47,24 +47,25 @@ public class CitaServicio {
     }
 
     private void generarHoraAtencionInicio(Cita cita) {
-        if (cita.getHoraAtencionInicioH()==12){
-            cita.setHoraAtencionInicioH(0);
+        int hora=cita.getHoraAtencionInicioH();
+        if (hora==12){
+            hora=0;
         }
         if (cita.isHoraAtencionInicioA()){
-            cita.setHoraAtencionInicioH(cita.getHoraAtencionInicioH()+12);
+            hora+=12;
         }
-        cita.setHoraAtencionInicio(LocalTime.of(cita.getHoraAtencionInicioH(),cita.getHoraAtencionInicioM()));
+        cita.setHoraAtencionInicio(LocalTime.of(hora,cita.getHoraAtencionInicioM()));
     }
 
     private void generarHoraAtencionFin(Cita cita) {
         int hora=cita.getHoraAtencionFinH();
-        if (cita.getHoraAtencionFinH()==12){
-            cita.setHoraAtencionFinH(0);
+        if (hora==12){
+            hora=0;
         }
         if (cita.isHoraAtencionFinA()){
-            cita.setHoraAtencionFinH(cita.getHoraAtencionFinH()+12);
+            hora+=12;
         }
-        cita.setHoraAtencionFin(LocalTime.of(cita.getHoraAtencionFinH(),cita.getHoraAtencionFinM()));
+        cita.setHoraAtencionFin(LocalTime.of(hora,cita.getHoraAtencionFinM()));
     }
 
 }
