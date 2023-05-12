@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1:3307
--- Tiempo de generación: 11-05-2023 a las 22:57:14
+-- Tiempo de generación: 12-05-2023 a las 18:51:05
 -- Versión del servidor: 10.4.27-MariaDB
 -- Versión de PHP: 8.2.0
 
@@ -29,8 +29,8 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `cita` (
   `id` int(11) NOT NULL,
-  `procedimiento` varchar(30) NOT NULL,
-  `consultorio` varchar(30) NOT NULL,
+  `procedimiento` varchar(50) NOT NULL,
+  `consultorio` varchar(50) NOT NULL,
   `fecha_atencion` varchar(35) DEFAULT NULL,
   `fecha_atencion_ano` int(11) NOT NULL,
   `fecha_atencion_dia` int(11) NOT NULL,
@@ -48,12 +48,39 @@ CREATE TABLE `cita` (
   `nombre_paciente` varchar(50) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+-- --------------------------------------------------------
+
 --
--- Volcado de datos para la tabla `cita`
+-- Estructura de tabla para la tabla `consultorio`
 --
 
-INSERT INTO `cita` (`id`, `procedimiento`, `consultorio`, `fecha_atencion`, `fecha_atencion_ano`, `fecha_atencion_dia`, `fecha_atencion_mes`, `hora_atencion`, `hora_atencion_fin`, `hora_atencion_fina`, `hora_atencion_finh`, `hora_atencion_finm`, `hora_atencion_inicio`, `hora_atencion_inicioa`, `hora_atencion_inicioh`, `hora_atencion_iniciom`, `nombre_especialista`, `nombre_paciente`) VALUES
-(24, 'eagvryeb', 'byrhyyt', '5  de febrero  de  2024', 2024, 5, '1', '7:00 p. m. a 12:00 a. m.', '00:00:00', '0', 12, 0, '19:00:00', '1', 7, 0, 'rtbtent', 'reqtgry');
+CREATE TABLE `consultorio` (
+  `id` int(11) NOT NULL,
+  `ubicacion` varchar(50) NOT NULL,
+  `departamento` varchar(50) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `departamento`
+--
+
+CREATE TABLE `departamento` (
+  `id` int(11) NOT NULL,
+  `nombre` varchar(50) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `especialidad`
+--
+
+CREATE TABLE `especialidad` (
+  `id` int(11) NOT NULL,
+  `nombre` varchar(50) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
@@ -64,7 +91,7 @@ INSERT INTO `cita` (`id`, `procedimiento`, `consultorio`, `fecha_atencion`, `fec
 CREATE TABLE `especialista` (
   `id` int(11) NOT NULL,
   `nombre` varchar(50) NOT NULL,
-  `especialidad` varchar(30) NOT NULL,
+  `especialidad` varchar(50) NOT NULL,
   `horario` varchar(100) NOT NULL,
   `horario_dia1` bit(1) NOT NULL,
   `horario_dia2` bit(1) NOT NULL,
@@ -83,6 +110,18 @@ CREATE TABLE `especialista` (
   `horario_iniciom` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `procedimiento`
+--
+
+CREATE TABLE `procedimiento` (
+  `id` int(11) NOT NULL,
+  `nombre` varchar(50) NOT NULL,
+  `especialidad` varchar(50) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
 --
 -- Índices para tablas volcadas
 --
@@ -94,9 +133,33 @@ ALTER TABLE `cita`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indices de la tabla `consultorio`
+--
+ALTER TABLE `consultorio`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indices de la tabla `departamento`
+--
+ALTER TABLE `departamento`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indices de la tabla `especialidad`
+--
+ALTER TABLE `especialidad`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indices de la tabla `especialista`
 --
 ALTER TABLE `especialista`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indices de la tabla `procedimiento`
+--
+ALTER TABLE `procedimiento`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -110,11 +173,34 @@ ALTER TABLE `cita`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
+-- AUTO_INCREMENT de la tabla `consultorio`
+--
+ALTER TABLE `consultorio`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT de la tabla `departamento`
+--
+ALTER TABLE `departamento`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT de la tabla `especialidad`
+--
+ALTER TABLE `especialidad`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
 -- AUTO_INCREMENT de la tabla `especialista`
 --
 ALTER TABLE `especialista`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
-COMMIT;
+
+--
+-- AUTO_INCREMENT de la tabla `procedimiento`
+--
+ALTER TABLE `procedimiento`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
