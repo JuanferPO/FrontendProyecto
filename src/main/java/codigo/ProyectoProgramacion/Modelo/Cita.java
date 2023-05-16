@@ -4,7 +4,6 @@ import javax.persistence.*;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-import java.time.LocalDate;
 import java.time.LocalTime;
 
 @Getter
@@ -20,7 +19,7 @@ public class Cita {
     private String nombrePaciente;
     private String procedimiento;
     private String nombreEspecialista;
-    private LocalDate fechaAtencion;
+    private String fechaAtencion;
     private String horaAtencion;
     private String consultorio;
     private LocalTime horaAtencionInicio;

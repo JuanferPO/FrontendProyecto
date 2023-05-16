@@ -2,6 +2,7 @@ package codigo.ProyectoProgramacion.Servicio;
 
 import codigo.ProyectoProgramacion.Repositorio.CitaRepositorio;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.stereotype.Service;
 import codigo.ProyectoProgramacion.Modelo.Cita;
 
@@ -9,6 +10,7 @@ import java.time.LocalDate;
 import java.time.LocalTime;
 import java.time.format.DateTimeFormatter;
 import java.util.List;
+import java.util.Locale;
 import java.util.Optional;
 
 @Service
@@ -42,7 +44,8 @@ public class CitaServicio {
     }
     
     public void generarFechaAtencion(Cita cita) {
-        cita.setFechaAtencion(LocalDate.of(cita.getFechaAtencionAno(),cita.getFechaAtencionMes()+1,cita.getFechaAtencionDia()));
+        DateTimeFormatter formato = DateTimeFormatter.ofPattern("d ' de 'MMMM ' de ' yyyy").withLocale(new Locale("es"));
+        cita.setFechaAtencion(LocalDate.of(cita.getFechaAtencionAno(),cita.getFechaAtencionMes()+1,cita.getFechaAtencionDia()).format(formato));
     }
 
     private void generarHoraAtencion(Cita cita) {
