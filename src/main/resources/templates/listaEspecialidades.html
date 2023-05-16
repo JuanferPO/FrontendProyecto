@@ -21,7 +21,7 @@
     <tr th:each="especialidad:${especialidades}">
       <td th:text="${especialidad.nombre}"></td>
       <td>
-        <a th:href="@{/especialidades/editar/}+${especialidad.id}" class="btn btn-warning ">Modificar datos</a>
+        <a th:href="@{/especialidades/editar/}+${especialidad.id}" class="btn btn-warning ">Modificar</a>
         &nbsp;&nbsp;&nbsp;
         <a th:href="@{/especialidades/eliminar/}+${especialidad.id}"  class="btn btn-danger">Eliminar</a>
       </td>

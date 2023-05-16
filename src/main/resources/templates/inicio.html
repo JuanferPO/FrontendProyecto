@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="https://www.thymeleaf.org">
+<html lang="en" xmlns:th="https://www.thymeleaf.org" xmlns="http://www.w3.org/1999/html">
 <head>
     <meta charset="UTF-8">
     <title>Inicio</title>
@@ -15,44 +15,40 @@
             </h1>
         </div>
         <div class="card-body">
-            <p align="center">
-                <a th:href="@{/citas}" type="button" class="btn btn-primary btn-lg">Ver citas </a>
-                <br> &nbsp;
-                <br>
-                <a th:href="@{/citas/anadir}" type="button" class="btn btn-success btn-lg">Solicitar cita </a>
-                <br> &nbsp;
-                <br>
-                <a th:href="@{/especialistas}" class="btn btn-primary btn-lg">Ver especialistas </a>
-                <br> &nbsp;
-                <br>
-                <a th:href="@{/especialistas/anadir}" type="button" class="btn btn-success btn-lg">Agregar especialista </a>
-                <br> &nbsp;
-                <br>
-                <a th:href="@{/especialidades}" class="btn btn-primary">Ver especialidades </a>
-                <br> &nbsp;
-                <br>
-                <a th:href="@{/especialidades/anadir}" type="button" class="btn btn-success">Agregar especialidad </a>
-                <br> &nbsp;
-                <br>
-                <a th:href="@{/procedimientos}" class="btn btn-primary">Ver procedimientos </a>
-                <br> &nbsp;
-                <br>
-                <a th:href="@{/procedimientos/anadir}" type="button" class="btn btn-success">Agregar procedimiento </a>
-                <br> &nbsp;
-                <br>
-                <a th:href="@{/consultorios}" class="btn btn-primary">Ver consultorios </a>
-                <br> &nbsp;
-                <br>
-                <a th:href="@{/consultorios/anadir}" type="button" class="btn btn-success">Agregar consultorio </a>
-                <br> &nbsp;
-                <br>
-                <a th:href="@{/departamentos}" class="btn btn-primary">Ver departamentos </a>
-                <br> &nbsp;
-                <br>
-                <a th:href="@{/departamentos/anadir}" type="button" class="btn btn-success">Agregar departamento </a>
-            </p>
+            <h2 align="center">
+                Ver...
+            </h2>
+            <br>
+            <div class="row justify-content-md-center">
+                <div class="col-md-auto">
+                    <div class="btn-group-vertical col-md-12" role="group" aria-label="anadir" align="center">
+                        <a th:href="@{/citas}" type="button" class="btn btn-primary btn-lg">...citas </a>
+                        <a th:href="@{/especialistas}" type="button" class="btn btn-primary btn-lg">...especialistas </a>
+                        <a th:href="@{/especialidades}" type="button" class="btn btn-primary">...especialidades </a>
+                        <a th:href="@{/procedimientos}" type="button" class="btn btn-primary">...procedimientos </a>
+                        <a th:href="@{/consultorios}" type="button" class="btn btn-primary">...consultorios </a>
+                        <a th:href="@{/departamentos}" type="button" class="btn btn-primary">...departamentos </a>
+                    </div>
+                </div>
+            </div>
+            <br>
+            <h2 align="center">
+                Añadir...
+            </h2>
+            <br>
+            <div class="row justify-content-md-center">
+                <div class="col-md-auto">
+                    <div class="btn-group-vertical col-md-12" role="group" aria-label="anadir" align="center">
+                        <a th:href="@{/citas/anadir}" type="button" class="btn btn-success btn-lg">...cita </a>
+                        <a th:href="@{/especialistas/anadir}" type="button" class="btn btn-success btn-lg">...especialista </a>
+                        <a th:href="@{/especialidades/anadir}" type="button" class="btn btn-success">...especialidad </a>
+                        <a th:href="@{/procedimientos/anadir}" type="button" class="btn btn-success">...procedimiento </a>
+                        <a th:href="@{/consultorios/anadir}" type="button" class="btn btn-success">...consultorio </a>
+                        <a th:href="@{/departamentos/anadir}" type="button" class="btn btn-success">...departamento </a>
+                    </div>
+                </div>
+            </div>
         </div>
-        <div class="card-footer"></div>
     </div>
 </div>
 </body>

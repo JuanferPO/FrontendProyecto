@@ -21,7 +21,7 @@
     <tr th:each="departamento:${departamentos}">
       <td th:text="${departamento.nombre}"></td>
       <td>
-        <a th:href="@{/departamentos/editar/}+${departamento.id}" class="btn btn-warning ">Modificar datos</a>
+        <a th:href="@{/departamentos/editar/}+${departamento.id}" class="btn btn-warning ">Modificar</a>
         &nbsp;&nbsp;&nbsp;
         <a th:href="@{/departamentos/eliminar/}+${departamento.id}"  class="btn btn-danger">Eliminar</a>
       </td>
