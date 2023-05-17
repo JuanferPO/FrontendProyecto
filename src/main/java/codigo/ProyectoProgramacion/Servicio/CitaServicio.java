@@ -2,10 +2,8 @@ package codigo.ProyectoProgramacion.Servicio;
 
 import codigo.ProyectoProgramacion.Repositorio.CitaRepositorio;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.stereotype.Service;
 import codigo.ProyectoProgramacion.Modelo.Cita;
-
 import java.time.LocalDate;
 import java.time.LocalTime;
 import java.time.format.DateTimeFormatter;
