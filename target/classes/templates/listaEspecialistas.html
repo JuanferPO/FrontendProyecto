@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Ver especialistas</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+</head>
+<body>
+<div class="container mt-4">
+  <h1 align="center">
+    Listado de especialistas
+  </h1>
+  <br>
+  <p align="center">
+    <a th:href="@{/especialistas/anadir}" class="btn btn-success btn-block">Agregar especialista</a>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <a th:href="@{/}" class="btn btn-secondary btn-block">Ir al inicio</a>
+  </p>
+  <table class="table" border="3">
+    <thead>
+    <tr>
+      <th>Nombre</th>
+      <th>Especialidad</th>
+      <th>Horario de atención</th>
+      <th>Opciones</th>
+
+    </tr>
+
+    </thead>
+    <tbody>
+    <tr th:each="especialista:${especialistas}">
+      <td th:text="${especialista.nombre}"></td>
+      <td th:text="${especialista.especialidad}"></td>
+      <td th:text="${especialista.horario}"></td>
+      <td>
+        <a th:href="@{/especialistas/editar/}+${especialista.id}" class="btn btn-warning ">Modificar datos</a>
+        &nbsp;&nbsp;&nbsp;
+        <a th:href="@{/especialistas/eliminar/}+${especialista.id}"  class="btn btn-danger">Eliminar</a>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+</div>
+</body>
+</html>

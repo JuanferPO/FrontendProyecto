@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Ver consultorios</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+</head>
+<body>
+<div class="container mt-4">
+  <h1 align="center">
+    Listado de consultorios
+  </h1>
+  <br>
+  <p align="center">
+    <a th:href="@{/consultorios/anadir}" class="btn btn-success btn-block">Agregar consultorio</a>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <a th:href="@{/}" class="btn btn-secondary btn-block">Ir al inicio</a>
+  </p>
+  <table class="table" border="3">
+    <thead>
+    <tr>
+      <th>Ubicación</th>
+      <th>Departamento</th>
+      <th>Opciones</th>
+    </tr>
+
+    </thead>
+    <tbody>
+    <tr th:each="consultorio:${consultorios}">
+      <td th:text="${consultorio.ubicacion}"></td>
+      <td th:text="${consultorio.departamento}"></td>
+      <td>
+        <a th:href="@{/consultorios/editar/}+${consultorio.id}" class="btn btn-warning ">Modificar datos</a>
+        &nbsp;&nbsp;&nbsp;
+        <a th:href="@{/consultorios/eliminar/}+${consultorio.id}"  class="btn btn-danger">Eliminar</a>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+</div>
+</body>
+</html>

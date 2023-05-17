@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Modificar nombre del especialidad</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+</head>
+<body>
+<div class="container mt-4">
+  <div class="col-sm-6 mx-auto">
+    <form th:action="@{/especialidades/editar/guardar}" th:object="${especialidad}" method="POST">
+      <div class="card">
+        <div class="card-header">
+          <h1 align="center">
+            Modificar nombre del especialidad
+          </h1>
+        </div>
+        <div class="card-body">
+          <p align="center">
+            <a th:href="@{/}" class="btn btn-warning">Cancelar y regresar al inicio</a>
+            <br>
+            <br>
+            <a th:href="@{/especialidades}" class="btn btn-warning">Cancelar y regresar a la lista de especialidades</a>
+          </p>
+          <div class="form-group">
+            <input th:field="*{nombre}" type="text" class="form-control">
+          </div>
+        </div>
+        <div class="card-footer">
+          <input type="submit" value="Guardar" class="btn btn-success btn-lg">
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
+</body>
+</html>
